@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suplementos Cartagena</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #1f1f1f;
+      color: white;
+    }
+
+    header {
+      background-color: #333;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .producto {
+      background-color: #2d2d2d;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .producto h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .producto p {
+      font-size: 0.9rem;
+    }
+
+    .producto button {
+      margin-top: 10px;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .producto button:hover {
+      background-color: #ff8264;
+    }
+
+    .carrito-btn {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background-color: #ff6347;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Suplementos Cartagena</h1>
+    <nav></nav>
+  </header>
+
+  <main class="productos">
+    <div class="producto">
+      <h2>Proteína Whey</h2>
+      <p>Proteína de suero para desarrollo muscular.</p>
+      <form method="POST" action="https://checkout.payulatam.com/ppp-web-gateway-payu">
+        <input name="merchantId" type="hidden" value="YOUR_MERCHANT_ID">
+        <input name="accountId" type="hidden" value="YOUR_ACCOUNT_ID">
+        <input name="description" type="hidden" value="Proteína Whey">
+        <input name="referenceCode" type="hidden" value="ref1">
+        <input name="amount" type="hidden" value="90000">
+        <input name="currency" type="hidden" value="COP">
+        <input name="signature" type="hidden" value="SIGNATURE_GENERADA">
+        <input name="test" type="hidden" value="1">
+        <input name="buyerEmail" type="hidden" value="comprador@correo.com">
+        <input name="responseUrl" type="hidden" value="https://suplementoscartagena.vercel.app/gracias">
+        <input name="confirmationUrl" type="hidden" value="https://suplementoscartagena.vercel.app/confirma">
+        <button type="submit">Comprar</button>
+      </form>
+    </div>
+
+    <!-- Puedes duplicar este bloque para más productos -->
+  </main>
+
+  <a href="#" class="carrito-btn" aria-label="Ver carrito" onclick="alert('Carrito en construcción')">
+    🛒
+  </a>
+
+  <a href="https://wa.me/573016702229?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20los%20suplementos" target="_blank" class="whatsapp-btn" aria-label="Chat en WhatsApp">
+    💬
+  </a>
+</body>
+</html>
